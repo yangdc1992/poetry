@@ -9,7 +9,7 @@ sig.Secret = st.secrets["sk"]
 
 def poetry_gen(input_text, style):
     body_str = json.dumps({"text": input_text, "style": style})
-    url = "https://23b3de61a2724abd858e01c718fae4b8.apig.cn-north-4.huaweicloudapis.com/v1/infers/5175b4cb-f6e2-45ec-a4e1-5c4b691c031a" + "/poetry/gen"
+    url = "https://32a808ad5a5144d9a961b1d3132a0752.apig.cn-north-4.huaweicloudapis.com/v1/infers/fc4b3f2b-6ddf-48e1-b4cc-ae294a87b30b" + "/poetry/gen"
     r = signer.HttpRequest("POST", url, {"x-stage": "RELEASE","Content-Type":"application/json"}, body_str)
     sig.Sign(r)
     resp = requests.request(r.method, r.scheme + "://" + r.host + r.uri, headers=r.headers, data=r.body)
